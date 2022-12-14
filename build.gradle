@@ -1,13 +1,23 @@
+
+plugins {
+    id 'org.sonarqube' version '3.4.0.2513'
+	id 'application'
+}
 apply plugin: 'jacoco'
 apply plugin: 'java'
 apply plugin: 'checkstyle'
-
+version = '0.0.1-SNAPSHOT'
 repositories {
     mavenCentral()
+    maven {
+		//url 'https://releases.aspose.com/java/repo/'
+		url 'https://plugins.gradle.org/m2/'
+	}
 }
 
 dependencies {
     testImplementation 'junit:junit:4.12'
+    runtimeOnly group: 'org.sonarsource.scanner.gradle', name: 'sonarqube-gradle-plugin', version :'3.2.0'
 }
 
 test {
@@ -35,6 +45,9 @@ task runMainGame2048Team2(dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
 }
-
+application {
+	// Define the main class for the application.
+	mainClass = 'gradle.test.src'
+}
 
 

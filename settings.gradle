@@ -1,2 +1,1 @@
-rootProject.name = 'src'
-include ('src')
+rootProject.name = 'runMainGame2048Team2'
