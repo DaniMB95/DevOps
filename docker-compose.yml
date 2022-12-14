@@ -1,0 +1,8 @@
+version: '2.12.1'
+services:
+  converter-task:
+    build: .
+    ports:
+      - "5000:5000"
+    container_name: converter-task-alvaro
+    restart: always
