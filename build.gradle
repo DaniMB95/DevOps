@@ -14,8 +14,8 @@ apply plugin: 'java'
 //env.VERSION=project.property('')
 //version= project.properties['version']
 //version = "$version"
-
-version = '0.0.1-SNAPSHOT' //variable de entorno
+version = project.ext.version
+//version = '0.0.1-SNAPSHOT' //variable de entorno
 group = 'gradle.test'
 sourceCompatibility = '1.8'
 repositories {

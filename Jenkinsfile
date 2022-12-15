@@ -1,3 +1,4 @@
+def version = '1.0.1-SNAPSHOT'
 pipeline {
     agent any
    // def version = '0.0.1-SNAPSHOT'
