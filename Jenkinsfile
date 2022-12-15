@@ -1,6 +1,7 @@
-def version = '1.0.1-SNAPSHOT'
+//def version = '1.0.1-SNAPSHOT'
 pipeline {
     agent any
+    setProperty "version", "1.0"
    // def version = '0.0.1-SNAPSHOT'
    // environment {
     // Variables de entorno
@@ -38,7 +39,7 @@ pipeline {
         }*/
         stage('Upload') {
             steps {
-
+                echo
                 sh './gradlew publish --console verbose'
 
             }
