@@ -25,8 +25,8 @@ pipeline {
         }
         stage('variables') {
             steps {
-                env.VERSION=project.property('1.0-SNAPSHOT')
-                
+                VERSION=project.property('1.0-SNAPSHOT')
+
                 // Establece las variables de entorno aquí
             }
 }
