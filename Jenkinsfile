@@ -1,11 +1,11 @@
 pipeline {
     agent any
    // def version = '0.0.1-SNAPSHOT'
-   / environment {
+   // environment {
     // Variables de entorno
    // def version = '0.0.1-SNAPSHOT'
     //MI_VARIABLE_2 = 'bar'
-  }
+  //}
     stages {
         stage('Build') {
             steps {
