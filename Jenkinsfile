@@ -1,8 +1,9 @@
 //def version = '1.0.1-SNAPSHOT'
-@Library('workflow-cps')
+
 pipeline {
+
     agent any
-    setProperty "version", "1.0"
+    //setProperty "version", "1.0"
    // def version = '0.0.1-SNAPSHOT'
    // environment {
     // Variables de entorno
@@ -31,17 +32,19 @@ pipeline {
 
             }
         }
-        /*stage('variables') {
+        stage('Update Version') {
             steps {
+                setProperty "version", "1.0.1-SNAPSHOT"
                 //version = 0.0.1-SNAPSHOT
-                sh './gradlew setProperty -Pversion="0.0.1-SNAPSHOT"'
+               // sh './gradlew setProperty -Pversion="0.0.1-SNAPSHOT"'
                 // Establece las variables de entorno aquí
             }
-        }*/
+        }
         stage('Upload') {
             steps {
                 //echo
-                sh './gradlew publish --console verbose'
+                sg.
+                sh './gradlew publish -Pversion=${version} --console verbose'
 
             }
         }
