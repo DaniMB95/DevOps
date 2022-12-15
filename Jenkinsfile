@@ -28,13 +28,13 @@ pipeline {
 
             }
         }
-        stage('variables') {
+        /*stage('variables') {
             steps {
                 //version = 0.0.1-SNAPSHOT
                 sh './gradlew setProperty -Pversion="0.0.1-SNAPSHOT"'
                 // Establece las variables de entorno aquí
             }
-        }
+        }*/
         stage('Upload') {
             steps {
 
