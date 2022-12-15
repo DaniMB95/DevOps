@@ -5,6 +5,16 @@ plugins {
     id 'java-library'
     id 'maven-publish'
 }
+buildscript {
+  // ...
+  dependencies {
+    // ...
+    classpath "org.gradle.api.plugins:base:1.1.0"
+  }
+}
+
+apply plugin: "base"
+
 apply plugin: 'jacoco'
 apply plugin: 'java'
 //apply plugin: 'checkstyle'
