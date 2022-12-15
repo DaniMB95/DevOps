@@ -8,7 +8,7 @@ plugins {
 apply plugin: 'jacoco'
 apply plugin: 'java'
 //apply plugin: 'checkstyle'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1-SNAPSHOT' //variable de entorno
 group = 'gradle.test'
 sourceCompatibility = '1.8'
 repositories {
@@ -33,11 +33,12 @@ publishing {
     repositories {
         maven {
             name 'nexus'
-            url "http://10.0.2.15:8081/repository/maven-snapshots/"
+            //url "http://10.0.2.15:8081/repository/maven-snapshots/"  //env
+            url project.sonatypeUrl
             allowInsecureProtocol true
             credentials {
-                username "admin"
-                password "devops123"
+                username project.sonatypeUsername            //env
+                password project.sonatypePassword         //env
             }
         }
     }
@@ -50,16 +51,6 @@ test {
     }
 }
 
-//checkstyle {
-  //  checkstyleMain.source = "src/main/"
-    //checkstyleMain.excludes = ["**/src/test/**"]
-//}
-
-//checkstyleMain {
-  //  source = 'src/main/java'
-//}
-
-//test.finalizedBy("checkstyleMain")
 test.finalizedBy("jacocoTestReport")
 
 
