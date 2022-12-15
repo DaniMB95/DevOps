@@ -8,7 +8,10 @@ plugins {
 apply plugin: 'jacoco'
 apply plugin: 'java'
 //apply plugin: 'checkstyle'
-version = '0.0.1-SNAPSHOT' //variable de entorno
+//env.VERSION=project.property('')
+VERSION= project.properties['VERSION']
+
+//version = '0.0.1-SNAPSHOT' //variable de entorno
 group = 'gradle.test'
 sourceCompatibility = '1.8'
 repositories {
