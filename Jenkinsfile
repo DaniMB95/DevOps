@@ -1,4 +1,5 @@
 //def version = '1.0.1-SNAPSHOT'
+@Library('workflow-cps')
 pipeline {
     agent any
     setProperty "version", "1.0"
@@ -39,7 +40,7 @@ pipeline {
         }*/
         stage('Upload') {
             steps {
-                echo
+                //echo
                 sh './gradlew publish --console verbose'
 
             }
