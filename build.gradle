@@ -34,11 +34,11 @@ publishing {
         maven {
             name 'nexus'
             //url "http://10.0.2.15:8081/repository/maven-snapshots/"  //env
-            url project.sonatypeUrl
+            url systemProp.sonatypeUrl
             allowInsecureProtocol true
             credentials {
-                username project.sonatypeUsername            //env
-                password project.sonatypePassword         //env
+                username systemProp.sonatypeUsername            //env
+                password systemProp.sonatypePassword         //env
             }
         }
     }
