@@ -8,7 +8,7 @@ apply plugin: "base"
 apply plugin: 'jacoco'
 apply plugin: 'java'
 //def version = '1.0.0-SNAPSHOT'
-version = project.properties['systemProp.version']
+def version = project.properties['systemProp.version']
 group = 'gradle.test'
 sourceCompatibility = '1.8'
 repositories {
