@@ -1,20 +1,13 @@
-//def version = '1.0.1-SNAPSHOT'
 
 pipeline {
 
     agent any
-    //setProperty "version", "1.0"
-   // def version = '0.0.1-SNAPSHOT'
-   // environment {
-    // Variables de entorno
-   // def version = '0.0.1-SNAPSHOT'
-    //MI_VARIABLE_2 = 'bar'
-  //}
+
     stages {
         stage('Build') {
             steps {
                 sh './gradlew assemble'
-                //sh './gradlew assemble'
+
             }
         }
 
@@ -32,20 +25,10 @@ pipeline {
 
             }
         }
-        stage('Update Version') {
-            steps {
-                setProperty "version", "1.0.1-SNAPSHOT"
-                //version = 0.0.1-SNAPSHOT
-               // sh './gradlew setProperty -Pversion="0.0.1-SNAPSHOT"'
-                // Establece las variables de entorno aquí
-            }
-        }
+
         stage('Upload') {
             steps {
-                //echo
-                
                 sh './gradlew publish -Pversion=${version} --console verbose'
-
             }
         }
     }
