@@ -40,7 +40,8 @@ pipeline {
 
         stage('Upload') {
             steps {
-                sh "./gradlew publish -Pversion=${env.VERSION} --console verbose"            }
+                sh "./gradlew publish -Pversion=${env.NUMBER}${env.BUILD_NUMBER}${env.SNAPSHOT} --console verbose"
+            }
         }
     }
 }
