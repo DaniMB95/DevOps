@@ -10,6 +10,18 @@ pipeline {
 
             }
         }
+        stage("env variables") {
+            steps {
+                sh "printenv | sort"
+            }
+
+        }
+        stage("usign") {
+            steps {
+                echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
+            }
+
+        }
 
         stage('Test') {
             steps {
